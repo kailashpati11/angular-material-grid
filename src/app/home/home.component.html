@@ -1,0 +1,17 @@
+<app-grid [dataSource]="dataSource" [displayedColumns]="displayedColumns" [columnConfig]="columnConfig">
+    <app-grid-column name="currentStatus">
+        <ng-template #cellTemplate let-element="element">
+            <span class="{{getStatusClass(element.currentStatus)}} current-status">
+                {{element.currentStatus}}
+            </span>
+        </ng-template>
+    </app-grid-column>
+
+    <app-grid-column name="action">
+        <ng-template #cellTemplate let-element="element">
+            <button mat-mini-fab>
+                <mat-icon>home</mat-icon>
+            </button>
+        </ng-template>
+    </app-grid-column>
+</app-grid>

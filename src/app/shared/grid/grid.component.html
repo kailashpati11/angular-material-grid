@@ -1,0 +1,25 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 grid-container">
+
+  <ng-container *ngFor="let column of columnConfig">
+    <ng-container [matColumnDef]="column.name">
+      <th mat-header-cell *matHeaderCellDef>{{column.title}}</th>
+
+      <ng-container *ngIf="!column?.isCustom">
+        <td mat-cell *matCellDef="let element"> {{element[column.name]}} </td>
+      </ng-container>
+
+      <ng-container *ngIf="column?.isCustom">
+        <td mat-cell *matCellDef="let element">
+          <ng-container [ngTemplateOutlet]="customColumnMap[column.name]"
+            [ngTemplateOutletContext]="{element: element}"></ng-container>
+        </td>
+      </ng-container>
+
+    </ng-container>
+
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
