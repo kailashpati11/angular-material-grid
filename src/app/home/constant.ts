@@ -1,3 +1,5 @@
+import { CardConfig } from "../shared/card/card.component"
+
 export interface GridData {
     ticketId: string,
     client: string,
@@ -145,4 +147,32 @@ export const gridData: GridData[] = [
         noOfJobs: 'Client Here',
         action: '',
     }
+]
+
+export const cardsData: CardConfig[] = [
+    {
+        color: 'bg-lime-300',
+        text: 'With me',
+        count: 97
+    },
+    {
+        color: 'bg-orange-300',
+        text: 'Convert to jobs',
+        count: 31
+    },
+    {
+        color: 'bg-purple-300',
+        text: 'Escalated',
+        count: 10
+    },
+    {
+        color: 'bg-sky-300',
+        text: 'Released',
+        count: 52
+    },
+    {
+        color: 'bg-pink-300',
+        text: 'Un assigned',
+        count: 27
+    },
 ]

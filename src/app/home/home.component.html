@@ -1,3 +1,16 @@
+<div class="flex items-center">
+    <app-card class="flex" [config]="cardsData"></app-card>
+
+    <div class="w-32 flex justify-between flex-col h-20 m-2">
+        <button mat-flat-button class="bg-sky-400 w-full">Add Ticket</button>
+        <button mat-flat-button class="bg-slate-400	w-full">Reset</button>
+    </div>
+    <div class="border rounded w-32 h-20 m-2 flex justify-between flex-col p-2">
+        <mat-checkbox class="example-margin" aria-checked="true">By Client(10)</mat-checkbox>
+        <mat-checkbox class="example-margin">Internal(5)</mat-checkbox>
+    </div>
+</div>
+
 <app-grid [dataSource]="dataSource" [displayedColumns]="displayedColumns" [columnConfig]="columnConfig">
     <app-grid-column name="currentStatus">
         <ng-template #cellTemplate let-element="element">

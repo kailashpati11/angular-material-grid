@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CardConfig } from '../shared/card/card.component';
 import { GridColumnConfig } from '../shared/grid/config/column-config';
-import { GridData, gridData } from './constant';
+import { cardsData, GridData, gridData } from './constant';
 
 @Component({
   selector: 'app-home',
@@ -73,6 +74,9 @@ export class HomeComponent implements OnInit {
       isCustom: true
     }
   ]
+
+  cardsData: CardConfig[] = cardsData;
+
   constructor() { }
 
   ngOnInit(): void {
